@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Awesome Extension",
+  "description": "Awesome",
+  "permissions": [ "storage","tabs","activeTab", "http://*/*", "https://*/*" ],
+  "version": "0.1",
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["http://www.footlocker.com/*","http://www.eastbay.com/*","http://www.finishline.com/*","http://store.nike.com/*"],
+    "js": ["jquery-2.2.0.min.js","content.js"],
+    "background": {
+  		"scripts": ["background.js"]
+	}
+  }]
+}

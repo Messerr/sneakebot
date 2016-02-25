@@ -1,0 +1,31 @@
+body{
+	height:auto;
+	width:300px;
+}
+h4{
+	text-align: center;
+	margin:0;
+}
+h3{
+	text-align: center;
+	margin:0;
+}
+.popup-body{
+	margin:0 auto;
+	max-width:100px;
+}
+select{
+	width:100px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+button{
+	width:100px;
+}
+
+#flChoiceSucess{
+	margin-bottom:10px;
+}
+#ebChoiceSucess{
+	margin-bottom:10px;
+}
