@@ -99,21 +99,35 @@ $( document ).ready(function() {
 			});
 		}
 	}
-	function nikeShowSizeChart(){
+	function nikeAutoAddToCart(){
 		if(url.indexOf('store.nike.com/') > -1){
-			console.log('Showing Size Chart');
-			$(".exp-pdp-size-dropdown-container").css('display','block');
+			console.log('Adding Size to Cart!');
+			// $('select.nsg-form--drop-down.exp-pdp-size-dropdown.exp-pdp-dropdown.selectBox').css('display',"block");
+			// var e1 = document.createEvent("MouseEvents");
+			// e1.initMouseEvent("mousedown", true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+			// jQuery("select")[0].dispatchEvent(e1)
+			jQuery("option[value$=" + "'" + nikeuserSize +"'" + "]").prop('selected',true);
+			jQuery("select")[0].blur();
+			$('#buyingtools-add-to-cart-button').trigger('click');
+			$('a.checkout-button.nsg-button.nsg-grad--nike-orange').trigger('click');
 		}
 	}
-	function nikeSelectSize(){
+	function nikeTakeToCart(){
 		if(url.indexOf('store.nike.com/') > -1){
-			console.log('Selecting Size!');
-			$("li[rel*=" + "'" + nikeuserSize + "'" + "]").trigger('click');
+			console.log('Taking to Cart!')
+			$('#minicart-view-cart-button')[0].click();
+		}
+	}
+	function nikePayPal(){
+		if(url.indexOf('secure-store.nike.com/us/checkout/')){
+			console.log('PayPal!');
+			$('#ch4_cartPayPalBtn')[0].click();
 		}
 	}
 //NIKE FUNCTION CALLS//
 	getNikeSize();
-	setTimeout(nikeShowSizeChart,2000);
-	setTimeout(nikeSelectSize, 5000)
+	setTimeout(nikeAutoAddToCart,2000);
+	setTimeout(nikeTakeToCart, 4000);
+	setTimeout(nikePayPal, 6000);
 
 });
